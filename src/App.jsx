@@ -1,6 +1,7 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 
-function App() {
+function Certificate() {
   return (
     <div className="certificate-page">
       <div className="certificate-container">
@@ -11,6 +12,17 @@ function App() {
         />
       </div>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Certificate />} />
+        <Route path="/verify/:certificateId" element={<Certificate />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
